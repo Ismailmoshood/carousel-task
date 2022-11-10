@@ -1,5 +1,5 @@
 # carousel-task
 A 6 image slideshow 
-br
+<br>
 #Published link
 https://ismailmoshood.github.io/carousel-task/

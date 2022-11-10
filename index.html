@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slideshow</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="text">Carousel Slideshow</h1>
+    <h3 class="text">Lionel Andres Messi</h3>
+    <div class="container">
+      <!-- 1st slide -->
+      <div class="slides">
+        <div class="number">1/6</div>
+        <div class="img">
+          <img src="asset/messi1.jfif" alt="messiimage" style="width: 100%" />
+        </div>
+      </div>
+      <div class="slides">
+        <!-- 2nd slide -->
+        <div class="number">2/6</div>
+        <img src="asset/messsi2.jfif" alt="messiimage" style="width: 100%" />
+      </div>
+      <!-- 3rd slide -->
+      <div class="slides">
+        <div class="number">3/6</div>
+        <img src="asset/messi3.jfif" alt="messiimage" style="width: 100%" />
+      </div>
+      <!-- 4th slide -->
+      <div class="slides">
+        <div class="number">4/6</div>
+        <img src="asset/messi4.jfif" alt="messiimage" style="width: 100%" />
+      </div>
+      <!-- 5th slide -->
+      <div class="slides">
+        <div class="number">5/6</div>
+        <img src="asset/messi5.jfif" alt="messiimage" style="width: 100%" />
+      </div>
+      <!-- 6th slide -->
+      <div class="slides">
+        <div class="number">6/6</div>
+        <img src="asset/messi6.jfif" alt="messiimage" style="width: 100%" />
+      </div>
+      <!-- next and previous button -->
+      <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <script>
+      let slideindex = 1;
+      showsslides(slideindex);
+
+      function plusSlides(n) {
+        showsslides((slideindex += n));
+      }
+      function showsslides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        if (n > slides.length) {
+          slideindex = 1;
+        }
+        if (n < 1) {
+          slideindex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideindex - 1].style.display = "block";
+      }
+    </script>
+  </body>
+</html>
